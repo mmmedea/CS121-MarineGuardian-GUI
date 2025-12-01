@@ -1,6 +1,7 @@
 MARINE GUARDIAN - Marine Biodiversity Tracker
 
-Description/Overview
+Description:
+
 Marine Guardian is a modernized desktop-based management system designed to support marine conservation efforts aligned with SDG 14: Life Below Water. The program helps environmental researchers and conservationists digitally track, monitor, and analyze data regarding marine species in Philippine waters.
 
 The application serves as a comprehensive digital logbook that goes beyond simple data entry. It features a modern dark-mode interface for comfortable usage during night patrols or lab work. Users can record new sightings with automated date stamping, visualize population health through integrated bar charts, and dynamically sort records to analyze trends. By replacing manual logging systems with a secure, graphical, and analytical tool, Marine Guardian provides a potential technical solution for data-driven biodiversity preservation.
