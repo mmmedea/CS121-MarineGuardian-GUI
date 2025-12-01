@@ -1,5 +1,4 @@
 MARINE GUARDIAN 
-
 Marine Biodiversity Tracker
 
 Description
@@ -68,6 +67,7 @@ If you have an old database file from a previous version, delete it before runni
 
 SAMPLE GUI VISUALIZATION
 
+```text
 +-------------------------------------------------------------+
 |  MARINE GUARDIAN                                            |
 |  SDG 14: Life Below Water - Digital Logbook                 |
