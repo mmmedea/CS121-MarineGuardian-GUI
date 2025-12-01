@@ -64,28 +64,29 @@ python marine_guardian.py
 Important Notes
 If you have an old database file from a previous version, delete it before running this version so the new date columns can be created.
 
-==========================================
 SAMPLE GUI VISUALIZATION
-==========================================
 
-+-------------------------------------------------------+
-|  MARINE GUARDIAN                                      |
-|  SDG 14: Life Below Water - Digital Logbook           |
-+-------------------------------------------------------+
-|  NEW SIGHTING                 |  SIGHTING HISTORY     |
-|                               |                       |
-|  Common Name:                 |  [Date Sort] [Name Sort]
-|  [ Clownfish      ]           |                       |
-|                               |  ID | Name | Date     |
-|  Scientific Name:             |  1  | Dory | 2025-12-01
-|  [ Amphiprioninae ]           |  2  | Nemo | 2025-12-01
-|                               |                       |
-|  [ Add Record    ] (Green)    |                       |
-|  [ Update Record ] (Blue)     |                       |
-|  [ Delete Record ] (Red)      |                       |
-|                               |                       |
-|  [ View Graph    ] (Purple)   |                       |
-+-------------------------------------------------------+
+```text
++-------------------------------------------------------------+
+|  MARINE GUARDIAN                                            |
+|  SDG 14: Life Below Water - Digital Logbook                 |
++-------------------------------------------------------------+
+|  NEW SIGHTING               |  SIGHTING HISTORY             |
+|                             |                               |
+|  Common Name:               |  [Date Sort]   [Name Sort]    |
+|  [__________________]       |                               |
+|                             |  +----+--------+------------+ |
+|  Scientific Name:           |  | ID | Name   | Date       | |
+|  [__________________]       |  |----|--------|------------| |
+|                             |  | 1  | Dory   | 2025-12-01 | |
+|  Location:                  |  | 2  | Nemo   | 2025-12-01 | |
+|  [__________________]       |  +----+--------+------------+ |
+|                             |                               |
+|  [ Add Record    ] (Green)  |                               |
+|  [ Update Record ] (Blue)   |                               |
+|  [ Delete Record ] (Red)    |                               |
+|  [ Clear Form    ] (Grey)   |                               |
++-------------------------------------------------------------+
 
 Author and Acknowledgement
 Author:
