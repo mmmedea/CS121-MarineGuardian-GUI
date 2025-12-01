@@ -5,12 +5,8 @@ import datetime
 import matplotlib.pyplot as plt
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
 
-# ==========================================
-# MODULE 1: DATABASE MANAGEMENT (Backend)
-# Requirement: Data Handling & Database Integration 
-# ==========================================
 class MarineDatabase:
-    def __init__(self, db_file="marine_life.db"): # Renamed back to marine_life.db
+    def __init__(self, db_file="marine_life.db"): 
         self.db_file = db_file
         self.create_table()
 
@@ -28,7 +24,6 @@ class MarineDatabase:
         conn = self.connect()
         if conn:
             cursor = conn.cursor()
-            # Requirement: CRUD - The structure allows Creating and Reading data 
             cursor.execute("""
                 CREATE TABLE IF NOT EXISTS species (
                     id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -45,7 +40,7 @@ class MarineDatabase:
     def insert_species(self, common, scientific, status, location):
         """CREATE: Add a new record """
         conn = self.connect()
-        current_date = datetime.datetime.now().strftime("%Y-%m-%d") # Auto-generate date
+        current_date = datetime.datetime.now().strftime("%Y-%m-%d") 
         if conn:
             try:
                 cursor = conn.cursor()
@@ -54,7 +49,7 @@ class MarineDatabase:
                 conn.commit()
                 return True
             except sqlite3.Error as e:
-                # Requirement: Error Handling 
+                
                 messagebox.showerror("Error", f"Could not add record: {e}")
                 return False
             finally:
@@ -121,10 +116,6 @@ class MarineDatabase:
             finally:
                 conn.close()
 
-# ==========================================
-# MODULE 2: GRAPHICAL USER INTERFACE (Frontend)
-# Requirement: GUI  & Modular Code 
-# ==========================================
 class MarineGUI:
     def __init__(self, root):
         self.db = MarineDatabase()
@@ -132,7 +123,6 @@ class MarineGUI:
         self.root.title("MarineGuardian | Biodiversity Tracker")
         self.root.geometry("1100x750")
         
-        # Modern Dark Theme Colors
         self.colors = {
             "bg": "#1e1e2e", "panel": "#252537", "accent": "#00aaff",
             "text": "#ffffff", "subtext": "#a0a0a0", "danger": "#ff4444", "success": "#00cc66"
@@ -142,18 +132,15 @@ class MarineGUI:
 
         self.create_header()
 
-        # Main Layout Container
         self.main_container = tk.Frame(self.root, bg=self.colors["bg"])
         self.main_container.pack(fill=tk.BOTH, expand=True, padx=20, pady=20)
 
-        # Left Panel (Inputs) - Wider for better usability
         self.left_panel = tk.Frame(self.main_container, bg=self.colors["panel"], width=380)
         self.left_panel.pack(side=tk.LEFT, fill=tk.Y, padx=(0, 20))
         self.left_panel.pack_propagate(False) 
         
         self.setup_input_form()
 
-        # Right Panel (Treeview)
         self.right_panel = tk.Frame(self.main_container, bg=self.colors["bg"])
         self.right_panel.pack(side=tk.RIGHT, fill=tk.BOTH, expand=True)
         
@@ -167,7 +154,6 @@ class MarineGUI:
         title = tk.Label(header_frame, text="MARINE GUARDIAN", font=("Segoe UI", 24, "bold"), bg=self.colors["bg"], fg=self.colors["accent"])
         title.pack(anchor="w")
         
-        # SDG Requirement: Clearly reflect how the project contributes to the goal
         subtitle = tk.Label(header_frame, text="SDG 14: Life Below Water - Digital Logbook", font=("Segoe UI", 12), bg=self.colors["bg"], fg=self.colors["subtext"])
         subtitle.pack(anchor="w")
         tk.Frame(self.root, bg=self.colors["accent"], height=2).pack(fill=tk.X, padx=20)
@@ -272,7 +258,6 @@ class MarineGUI:
             self.tree.insert("", tk.END, values=row)
 
     def add_record(self):
-        # Requirement: Error Handling for user inputs 
         if not self.common_name_var.get() or not self.location_var.get():
             messagebox.showwarning("Input Error", "Common Name and Location are required!")
             return
